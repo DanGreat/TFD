@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-avatar>
+      <img src="../../assets/tfd-logo.png" />
+    </ion-avatar>
+    <ion-title>
+     
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-badge color="danger" mode="ios">2</ion-badge>
+      <ion-button (click)="onClick()" class="notification">
+        <ion-icon name="notifications-outline" mode="ios" size="large" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button (click)="onClick()" class="more-details">
+          <ion-icon name="more" mode="md" size="large" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="main">
+        <ion-icon name="home"  mode="md"></ion-icon>
+        <!-- <ion-img src="../../assets/icon/home.png" class="icom-img"></ion-img> -->
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="audio">
+        <ion-icon name="musical-note" mode="ios"></ion-icon>
+        <!-- <ion-img src="../../assets/icon/audio.png" class="icom-img"></ion-img> -->
+        <ion-label>Audio</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="video">
+        <ion-icon name="videocam" mode="ios"></ion-icon>
+        <!-- <ion-img src="../../assets/icon/video.png" class="icom-img"></ion-img> -->
+        <ion-label>Videos</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="confessions">
+        <ion-icon name="rose" mode="ios" class=""></ion-icon>
+        <ion-label>Confessions</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="profile">
+        <ion-icon name="person" mode="ios"></ion-icon>
+        <!-- <ion-img src="../../assets/icon/person.png" class="icom-img"></ion-img> -->
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+
+</ion-content>

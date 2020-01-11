@@ -1,0 +1,20 @@
+ion-buttons > ion-button.notification, ion-buttons > ion-button.more-details{
+    margin-left: -2px;
+    --padding-top: 0;
+    --padding-end: 0;
+    --padding-bottom: 0;
+    --padding-start: 0;
+}
+.icom-img{
+    width: 28px;
+    height: 28px;
+}
+ion-tab-button{
+    --color-selected: orangered;
+    --ripple-color: darkorange;
+}
+ion-tab-bar{
+    --color: #000000;
+    --border: none;
+    --background: linear-gradient(transparent 22% -27px, #9a9898 120% -76px);
+}
