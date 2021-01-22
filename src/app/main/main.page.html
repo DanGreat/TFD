@@ -1,9 +1,48 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>main</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [scrollEvents]="true" (ionScroll)="didScroll($event)">
 
-<ion-content>
+  <ng-container *ngFor="let videos of videoFeed; let i = index;">
+    <ion-card *ngFor="let video of videos;">
+      <ion-card-header>
+        <!-- The subtitle should display time and date -->
+        <div class="card-head">
+          <ion-avatar>
+            <img src="../../assets/tfd-logo.png" />
+          </ion-avatar>
+          <div class="no-flex">
+            <ion-card-title>Ministering</ion-card-title>
+            <ion-card-subtitle>Pst. Jide Alaje</ion-card-subtitle>
+          </div>
+        </div>
+        <ion-label> {{ video.created_time |  date:'short' }}</ion-label>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <video #player playsinLine preload="auto" controls="false">
+          <source type="video/mp4" [src]="video.source"/>
+        </video>
+        <h1>{{video.description}}</h1>
 
+       <!-- <ion-list-header>
+  <ion-label>New This Week</ion-label>
+  <ion-button>See All</ion-button>
+</ion-list-header> -->
+        <ion-button slot="end" fill="clear" (click)="watchSermon(videos[i].source)" color="primary">
+          <ion-icon slot="icon-only" name="play-outline"></ion-icon>
+          <!-- Watch       -->
+        </ion-button>
+        <ion-button slot="start" fill="clear" (click)="toggleFavourite()" color="primary">
+          <ion-icon slot="icon-only" [name]="isFavourite"></ion-icon>
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+
+    <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="moreSermons($event)" [hidden]="videoFeed.length < 1">
+      <ion-infinite-scroll-content
+        loadingSpinner="crescent"
+        loadingText="Loading more sermons...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll> -->
+  </ng-container>
+  
 </ion-content>

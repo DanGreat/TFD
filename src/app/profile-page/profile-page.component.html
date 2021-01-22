@@ -1,0 +1,46 @@
+<ion-header parallax imageUrl="https://picsum.photos/350" maximumHeight="250" expandedColor="#AAA" titleColor="white">
+ 
+  <ion-toolbar>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-button (click)="addPhoto()" expand="block" fill="outline" class="photoBtn">
+    <ion-icon slot="start" name="image-outline" size="large"></ion-icon> Add Photo
+  </ion-button>
+  <form>
+    <ion-list lines='none'>
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input type="text" [(ngModel)]="userName" name="userName"></ion-input>
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+      </ion-item>
+
+      <!-- <ion-item>
+        <ion-label position="floating">Phone Number</ion-label>
+        <ion-input type="tel" [(ngModel)]="phoneNumber" name="phoneNumber"></ion-input>
+        <ion-icon slot="start" name="phone-portrait-outline"></ion-icon>
+      </ion-item> -->
+  
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="userEmail" name="userEmail"></ion-input>
+        <ion-icon slot="start" name="mail-outline"></ion-icon>
+      </ion-item>
+    </ion-list>
+    
+      <ion-button (click)="saveProfile()" expand="block" >
+        <ion-icon slot="start" name="save-outline"></ion-icon>
+        Save
+      </ion-button>
+
+      <ion-button (click)="close()" expand="block" fill="clear">
+        <ion-icon slot="start" name="close-outline"></ion-icon>
+        Cancel
+      </ion-button>
+  </form>
+</ion-content>

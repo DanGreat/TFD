@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="user-header">
+    <ion-avatar>
+      <img [src]="photo" />
+    </ion-avatar>
+
+    <div class="user-header-text">
+      <h3> {{ username }}</h3>
+      <p>{{ email }}</p>
+    </div>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="profilePage()">
+      <ion-icon name="create"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>User Settings</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="notifications-outline" slot="start"></ion-icon>
+      <ion-label>Notification</ion-label>
+      <ion-toggle slot="end"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="contrast-outline" slot="start"></ion-icon>
+      <ion-label>Theme</ion-label>
+      <ion-toggle slot="end" [(ngModel)]="value" (ionChange)="themeValue()"></ion-toggle>
+    </ion-item>
+
+    <ion-item (click)="resetPassword()">
+      <ion-icon name="key-outline" slot="start"></ion-icon>
+      <ion-label>Reset Password</ion-label>
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label>More</ion-label>
+    </ion-list-header>
+  
+    <ion-item (click)="contactUs()">
+      <ion-icon name="call-outline" slot="start"></ion-icon>
+      <ion-label>Contact Us</ion-label>
+    </ion-item>
+  
+    <ion-item (click)="appInfo()">
+      <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+      <ion-label>App Info</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer class="ion-no-border ion-padding">
+    <ion-button (click)="makeDonation()" expand="block">
+      MAKE A DONATION
+    </ion-button>
+</ion-footer>

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { MainPageRoutingModule } from './main-routing.module';
+import { VideoPageComponent } from '../video-page/video-page.component';
 
 import { MainPage } from './main.page';
 
@@ -15,6 +16,7 @@ import { MainPage } from './main.page';
     IonicModule,
     MainPageRoutingModule
   ],
-  declarations: [MainPage]
+  entryComponents: [VideoPageComponent],
+  declarations: [MainPage, VideoPageComponent]
 })
 export class MainPageModule {}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
 
 @Component({
   selector: 'app-video',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoPage implements OnInit {
 
-  constructor() { }
+  constructor(private streamMedia: StreamingMedia) { }
+
+  videoOption: StreamingVideoOptions = {
+    orientation: 'landscape',
+    shouldAutoClose: true,
+    controls: true,
+    successCallback: () => console.log('Stream Successfull'),
+    errorCallback: () => console.log('Stream Failed'),
+  };
+
 
   ngOnInit() {
+    // this.streamMedia.playVideo('', this.videoOption);
   }
+
 
 }

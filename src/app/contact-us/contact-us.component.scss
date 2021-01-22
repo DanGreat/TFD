@@ -1,0 +1,27 @@
+ion-textarea{
+    border: 0.3px solid lightslategray;
+    border-radius: 8px;
+}
+.img-container{
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    .img-content{
+        width: 50%;
+        height: 100px;
+        background-color: #a6a6a6ad;
+        margin-right: 5px;
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+
+        .add-icon{
+            position: relative;
+            top: 35px;
+            left: 35px;
+        }
+    }
+}
+.submit{
+    margin-top: 50px;
+}

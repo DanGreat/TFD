@@ -1,50 +1,48 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-avatar>
-      <img src="../../assets/tfd-logo.png" />
-    </ion-avatar>
-    <ion-title>
-     
-    </ion-title>
+    <div class="header-title">
+      <ion-avatar>
+        <img src="../../assets/tfd-logo.png" />
+      </ion-avatar>
+      <ion-title>
+        TFDC
+      </ion-title>
+    </div>
+    
     <ion-buttons slot="end">
-      <ion-badge color="danger" mode="ios">2</ion-badge>
-      <ion-button (click)="onClick()" class="notification">
-        <ion-icon name="notifications-outline" mode="ios" size="large" slot="icon-only"></ion-icon>
-      </ion-button>
-      <ion-button (click)="onClick()" class="more-details">
-          <ion-icon name="more" mode="md" size="large" slot="icon-only"></ion-icon>
+      <!-- <ion-badge color="danger" mode="ios">2</ion-badge>
+      <ion-button (click)="onClick()" class="notification" color="primary">
+        <ion-icon name="notifications-outline" mode="ios" size="default" slot="icon-only"></ion-icon>
+      </ion-button> -->
+      <ion-button (click)="actionSheet()" class="more-details" color="primary">
+          <ion-icon name="ellipsis-vertical" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
- 
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
+  <ion-tabs fullscreen >
+    <ion-tab-bar slot="bottom"  [class.slideTab]="hideTabbar">
       <ion-tab-button tab="main">
-        <ion-icon name="home"  mode="md"></ion-icon>
-        <!-- <ion-img src="../../assets/icon/home.png" class="icom-img"></ion-img> -->
+        <ion-icon name="home-outline"></ion-icon>
         <ion-label>Home</ion-label>
       </ion-tab-button>
       <ion-tab-button tab="audio">
-        <ion-icon name="musical-note" mode="ios"></ion-icon>
-        <!-- <ion-img src="../../assets/icon/audio.png" class="icom-img"></ion-img> -->
+        <ion-icon name="headset-outline"></ion-icon>
         <ion-label>Audio</ion-label>
       </ion-tab-button>
       <ion-tab-button tab="video">
-        <ion-icon name="videocam" mode="ios"></ion-icon>
-        <!-- <ion-img src="../../assets/icon/video.png" class="icom-img"></ion-img> -->
+        <ion-icon name="videocam-outline"></ion-icon>
         <ion-label>Videos</ion-label>
       </ion-tab-button>
       <ion-tab-button tab="confessions">
-        <ion-icon name="rose" mode="ios" class=""></ion-icon>
+        <ion-icon name="flame-outline"></ion-icon>
         <ion-label>Confessions</ion-label>
       </ion-tab-button>
       <ion-tab-button tab="profile">
-        <ion-icon name="person" mode="ios"></ion-icon>
-        <!-- <ion-img src="../../assets/icon/person.png" class="icom-img"></ion-img> -->
-        <ion-label>Profile</ion-label>
+        <ion-icon name="star-outline"></ion-icon>
+        <ion-label>Favourites</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>

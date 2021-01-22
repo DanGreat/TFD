@@ -24,10 +24,10 @@ const routes: Routes = [
         path: 'confessions',
         loadChildren: () => import('../confessions/confessions.module').then( m => m.ConfessionsPageModule)
       },
-      {
-        path: 'profile',
-        loadChildren: () => import('../profile/profile.module').then( m => m.ProfilePageModule)
-      },
+      // {
+      //   path: 'profile',
+      //   loadChildren: () => import('../profile/profile.module').then( m => m.ProfilePageModule)
+      // },
     ]
   },
   {

@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginComponentComponent } from '../login-component/login-component.component';
+import { ModalController } from '@ionic/angular';
+import { SignupComponentComponent } from '../signup-component/signup-component.component';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-intro',
@@ -7,20 +11,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./intro.page.scss'],
 })
 export class IntroPage implements OnInit {
-  splashScreen = true;
-  constructor(private router: Router) { }
+
+  constructor(private router: Router, private modalCtrl: ModalController, private auth: AngularFireAuth) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.splashScreen = false;
-    }, 40000);
+
   }
 
-  logIn() {
-    this.router.navigate(['general/main']);
+
+  async signUpModal() {
+    const modal = await this.modalCtrl.create({
+      component: SignupComponentComponent,
+    });
+    return await modal.present();
   }
 
-  signUp() {
-    this.router.navigate(['signup']);
+  async loginModal() {
+    const modal = await this.modalCtrl.create({
+      component: LoginComponentComponent,
+    });
+    return await modal.present();
   }
+
+
+  // signupWithGoogle() {
+  //   const provider = this.auth.
+
+  // }
 }

@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>    
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+          <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <div class="icon-text animated fadeIn delay-1s">
+    <ion-avatar>
+      <img src="../assets/tfd-logo.png" />
+    </ion-avatar>
+    <h1 class="text-color">The Father's Dwelling Church</h1>
+  </div>
+
+  <form [formGroup]="loginForm" class="animated fadeIn delay-2s">
+
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+        <ion-icon slot="start" name="mail-outline"></ion-icon>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input [type]="passwordType" formControlName="password"></ion-input>
+        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        <ion-icon [name]="passwordIcon" (click)="showHidePassword()" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+    
+
+    <ion-button (click)="logIn()" fill="solid" expand="block" [disabled]="loginForm.invalid">
+      LOGIN
+    </ion-button>
+  
+    <a href="javascript:void(0)" (click)="forgotPassword()">Forgot Password?</a>
+  </form>
+
+  
+
+    <!-- <ion-icon name="finger-print-outline" class="thumb-icon"></ion-icon> -->
+
+</ion-content>

@@ -6,6 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { GeneralPageRoutingModule } from './general-routing.module';
 
+import { AboutPageComponent } from '../about-page/about-page.component';
+
 import { GeneralPage } from './general.page';
 
 @NgModule({
@@ -15,6 +17,7 @@ import { GeneralPage } from './general.page';
     IonicModule,
     GeneralPageRoutingModule
   ],
-  declarations: [GeneralPage]
+  entryComponents: [AboutPageComponent],
+  declarations: [GeneralPage, AboutPageComponent]
 })
 export class GeneralPageModule {}

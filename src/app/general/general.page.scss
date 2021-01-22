@@ -1,20 +1,43 @@
 ion-buttons > ion-button.notification, ion-buttons > ion-button.more-details{
-    margin-left: -2px;
+    margin-left: -12px;
     --padding-top: 0;
     --padding-end: 0;
     --padding-bottom: 0;
     --padding-start: 0;
+}
+.header-title{
+    display: flex;
+    ion-title{
+        padding: 0 5px;
+    }
+}
+
+ion-badge{
+    background: #fafafa;
+    color: black;
+    border: .5px solid grey;
 }
 .icom-img{
     width: 28px;
     height: 28px;
 }
 ion-tab-button{
-    --color-selected: orangered;
-    --ripple-color: darkorange;
+    --color-selected: #2f108e;
+    --ripple-color: #1631ca;
 }
+
 ion-tab-bar{
-    --color: #000000;
-    --border: none;
-    --background: linear-gradient(transparent 22% -27px, #9a9898 120% -76px);
+    --color: rgba(99, 98, 98, 0.58);
+}
+ion-avatar{
+    margin-left: 10px;
+    width: 55px;
+    height: 49px;
+}
+.actionStyle span{
+   --color: red;
+}
+.slideTab{
+    transition: all .4s ease-out;
+    height: 0px;
 }

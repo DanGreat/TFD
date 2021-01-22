@@ -26,3 +26,20 @@
 @import "~@ionic/angular/css/flex-utils.css";
 @import '~animate.css/animate.min.css';
 @import url('https://fonts.googleapis.com/css?family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
+
+.action-sheet-destructive.sc-ion-action-sheet-ios, .action-sheet-destructive.ion-activated.sc-ion-action-sheet-ios, .action-sheet-destructive.ion-focused.sc-ion-action-sheet-ios{
+    color: #4527A0 !important;
+}
+ion-button{
+    --padding-bottom: 23px;
+    --padding-top: 23px;
+}
+
+p, ion-text, label{
+    font-family: 'Montserrat', sans-serif;
+}
+
+ion-item{
+    --highlight-background: #673AB7;
+}
