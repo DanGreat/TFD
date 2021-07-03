@@ -49,9 +49,6 @@ export class GeneralPage implements OnInit, OnDestroy {
                 });
               }
 
-  ngOnDestroy() {
-    console.log('Destroyed');
-  }
 
   ngOnInit() {
     this.platform.ready().then(() => {
@@ -69,7 +66,6 @@ export class GeneralPage implements OnInit, OnDestroy {
           });
         }
       });
-      this.loadingCtrl.dismiss();
     }).catch(err => {
       console.error('Platform not ready to display streams', err);
     });
@@ -138,5 +134,10 @@ export class GeneralPage implements OnInit, OnDestroy {
     });
 
     await toast.present();
+  }
+
+
+  ngOnDestroy() {
+    console.log('Destroyed');
   }
 }

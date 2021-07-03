@@ -34,19 +34,6 @@ export class SettingsPage implements OnInit {
   ngOnInit() {
     this.nativeStorage.getItem('DARK-THEME').then(theme => {
       this.value = theme;
-      // if (theme === true && this.value === false) {
-      //   console.log("Theme: ", theme);
-      //   this.value = theme;
-      // }else if(theme === false && this.value === true){
-      //   console.log("Theme1: ", theme);
-      //   this.value = theme;
-      // }else if(theme === true && this.value === true){
-      //   console.log("Theme2: ", theme);
-      //   this.value = theme;
-      // }else if(theme === false && this.value === false){
-      //   console.log("Theme3: ", theme);
-      //   this.value = theme;
-      // }
     });
 
     // this.themeService.theme$.subscribe(res => {
@@ -68,6 +55,7 @@ export class SettingsPage implements OnInit {
       .then((data) => {
         console.log('Data: ', data.providerData);
         data.providerData.forEach((profile) => {
+          console.log("User Profile: ", profile);
           this.username =  profile.displayName !== null ? profile.displayName : 'Welcome';
           this.email = profile.email;
           this.photo = profile.photoURL !== null ? profile.photoURL : '../assets/tfd-logo.png';

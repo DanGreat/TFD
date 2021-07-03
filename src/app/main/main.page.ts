@@ -38,12 +38,12 @@ export class MainPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    // this.presentLoading();
-
     this.platform
       .ready()
       .then(() => {
-        this.fetchStreams();
+        this.presentLoading().then(() => {
+          this.fetchStreams();
+        });
       })
       .catch((err) => {
         console.error('Platform not ready to display streams', err);
@@ -53,15 +53,14 @@ export class MainPage implements OnInit {
   fetchStreams() {
     this.service.fetchVideos().subscribe(
       (res) => {
-        this.videoFeed = Array<any>(res['data']);
+        this.videoFeed = res.videos;
         if (this.videoFeed.length > 0) {
-          this.loadingController.dismiss();
+          this.loadingController.getTop().then(v => v ? this.loadingController.dismiss() : null);
         }
       },
       (error) => {
-        this.alertMsg('Please check your network connection!').then(() => {
-          this.loadingController.dismiss();
-        });
+        this.loadingController.getTop().then(v => v ? this.loadingController.dismiss() : null);
+        this.alertMsg('Please check your network connection!')
       }
     );
   }
@@ -191,6 +190,7 @@ export class MainPage implements OnInit {
 
     await alert.present();
   }
+  
   // moreSermons(event: any) {
   //   this.service.fetchVideos().subscribe(res => {
   //     const more: any = Array<any>(res['data']);
